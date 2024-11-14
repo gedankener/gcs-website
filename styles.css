@@ -151,40 +151,41 @@ body {
     transform: rotate(-45deg) translate(7px, -7px);
 }
 
-/* Hero Section */
+
+
 #home {
     min-height: 100vh;
-    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.6)), url('background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     display: flex;
     align-items: center;
+    justify-content: center;
     padding: 6rem 2rem 4rem;
-}
-
-.hero-content {
-    text-align: center;
-}
-
-.hero-content h1 {
-    font-size: 3rem;
+ }
+ 
+ .hero-content h1 {
+    font-size: 5rem;
     margin-bottom: 1rem;
-    background: linear-gradient(
-        135deg,
-        #FF00FF 0%,
-        #9932CC 25%,
-        #4169E1 50%,
-        #40E0D0 75%,
-        #00CED1 100%
-    );
+    background: #f6fff6;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-}
-
-.hero-content p {
-    font-size: 1.25rem;
-    color: #666;
+ }
+ 
+ .hero-content p {
+    font-size: 2rem;
+    color: #FFFFFF;
     margin-bottom: 2rem;
-}
+ }
+ 
+ .hero-content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+ }
 
 .cta-button {
     display: inline-block;
@@ -274,7 +275,7 @@ body {
 /* Contact Section */
 #contact {
     min-height: 100vh;
-    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('support.jpg');
     display: flex;
     align-items: center;
     padding: 6rem 2rem 4rem;
@@ -302,8 +303,8 @@ body {
 }
 
 .contact-content > p {
-    font-size: 1.25rem;
-    color: #666;
+    font-size: 2.25rem;
+    color: #ffffff;
     margin-bottom: 3rem;
 }
 
@@ -454,7 +455,7 @@ body {
 /* About Section */
 #about {
     min-height: 100vh;
-    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.6)), url('bac.webp');
     display: flex;
     align-items: center;
     padding: 6rem 2rem 4rem;
@@ -683,7 +684,7 @@ body {
 /* Services Section */
 #services {
     min-height: 100vh;
-    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.6)), url('OpticFiber.jpg');
     padding: 80px 20px;
 }
 
@@ -711,7 +712,7 @@ body {
 
 .services-subtitle {
     font-size: 1.25rem;
-    color: #666;
+    color: #ffffff;
     margin-bottom: 3rem;
 }
 
@@ -731,8 +732,8 @@ body {
     transform: translate(-50%, -50%);
     text-align: center;
     z-index: 2;
-    width: 400px;
-    height: 400px;
+    width: 600px;
+    height: 519.61px; /* Height = width * cos(30°) */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -745,7 +746,7 @@ body {
         #40E0D0 75%,
         #00CED1 100%
     );
-    border-radius: 10px;
+    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
     box-shadow: 0 8px 25px rgba(0,0,0,0.15);
     padding: 2rem;
 }

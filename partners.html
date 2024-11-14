@@ -4,160 +4,311 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Low Voltage Solutions</title>
+    <title>Manufacturers - CJG Technology Sales</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Partners Section */
+        #partners {
+            min-height: 100vh;
+            background: url('trucks.jpg') center/cover no-repeat;
+            padding: 6rem 2rem 4rem;
+        }
+
+        .partners-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            font-family: system-ui, -apple-system, sans-serif;
+        }
+
+        .partners-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .partners-header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg,
+                    #FF00FF 0%,
+                    #9932CC 25%,
+                    #4169E1 50%,
+                    #40E0D0 75%,
+                    #00CED1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .partners-header p {
+            font-size: 1.25rem;
+            color: #666;
+        }
+
+        .partners-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            padding: 2rem 0;
+        }
+
+        .partner-card {
+            background: rgb(253, 253, 253);
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .inverted-logo {
+            filter:  invert(1);
+        }
+
+        .partner-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .partner-logo {
+
+            height: 100px;
+            margin: 0 1.54 1.5rem;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .partner-logo img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .partner-logo a {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+
+        .partner-card h3 {
+            color: #333;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .partner-card p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            padding: 0 1rem;
+        }
+
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            text-decoration: none;
+        }
+
+        .company-name {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+        }
+
+        .nav-links a:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-2px);
+        }
+
+        /* Mobile Navigation */
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            padding: 10px;
+            background: none;
+            border: none;
+            z-index: 1001;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            margin: 5px 0;
+            background: white;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-nav {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg,
+                    #FF00FF 0%,
+                    #9932CC 25%,
+                    #4169E1 50%,
+                    #40E0D0 75%,
+                    #00CED1 100%);
+            z-index: 1000;
+            padding-top: 80px;
+            transform: translateY(-100%);
+            transition: transform 0.3s ease;
+        }
+
+        .mobile-nav.active {
+            transform: translateY(0);
+        }
+
+        .mobile-nav a {
+            display: block;
+            padding: 15px;
+            text-align: center;
+            font-size: 1.2rem;
+            color: white;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+
+        .mobile-nav a:hover {
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        @media (max-width: 1024px) {
+            .partners-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .mobile-nav {
+                display: block;
+            }
+
+            .partners-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .partners-header h1 {
+                font-size: 2rem;
+            }
+
+            .partners-header p {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
 </head>
 
 <body>
-    <!-- Header/Navigation -->
     <header class="header">
         <nav class="nav-container">
-            <div class="logo-placeholder">LOGO</div>
-            <!-- Desktop Navigation -->
+            <a href="./index.html" class="logo">
+                <svg width="40" height="40" viewBox="0 0 190 190" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M134.128 27.2276L173.257 95L134.128 162.772L55.8716 162.772L16.7432 95L55.8716 27.2276L134.128 27.2276Z" stroke="white" stroke-width="29"/>
+                    <path d="M143.113 90C144.9 93.094 144.9 96.906 143.113 100L123.387 134.167C121.6 137.261 118.299 139.167 114.726 139.167L75.2735 139.167C71.7008 139.167 68.3996 137.261 66.6133 134.167L46.8868 100C45.1004 96.906 45.1004 93.094 46.8868 90L66.6133 55.8327C68.3996 52.7387 71.7009 50.8327 75.2735 50.8327L114.727 50.8327C118.299 50.8327 121.6 52.7387 123.387 55.8327L143.113 90Z" fill="white"/>
+                </svg>
+                <span class="company-name">CJG Technology Sales</span>
+            </a>
             <div class="nav-links">
-                <a href="./index.html">Home</a>
                 <a href="./about.html">About Us</a>
                 <a href="./services.html">Services</a>
                 <a href="./partners.html">Partners</a>
-                <a href="./contact.html">Contact</a>
+                <a href="./contact.html">Contact Us</a>
             </div>
-            <!-- Hamburger Menu Button -->
             <button class="hamburger" aria-label="Menu">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
-            <!-- Mobile Navigation Overlay -->
             <div class="mobile-nav">
                 <a href="./index.html">Home</a>
                 <a href="./about.html">About Us</a>
                 <a href="./services.html">Services</a>
                 <a href="./partners.html">Partners</a>
-                <a href="./contact.html">Contact</a>
+                <a href="./contact.html">Contact Us</a>
             </div>
         </nav>
     </header>
 
-
-    <!-- Partners Section -->
     <section id="partners">
-        <div class="container">
-            <div class="section-header">
-                <h2>Our Partners</h2>
-                <p>Working with industry leaders in low voltage solutions</p>
+        <div class="partners-container">
+            <div class="partners-header">
+                <h1>Our Partnerss</h1>
+                <p>Working with industry leaders to deliver exceptional solutions</p>
             </div>
-            <div class="partner-carousel">
-                <div class="carousel-track">
-                    <!-- First set of logos -->
+
+            <div class="partners-grid">
+                <div class="partner-card">
                     <div class="partner-logo">
-                        <svg viewBox="0 0 100 50" class="mock-logo">
-                            <rect x="10" y="10" width="30" height="30" fill="#007bff" />
-                            <circle cx="60" cy="25" r="15" fill="#007bff" />
-                        </svg>
+                        <a href="https://www.proterial.com/en/" target="_blank">
+                            <img src="proterial-cable-america.png" alt="Proterial Cable America">
+                        </a>
                     </div>
+                    <p>Proterial Cable America, Inc (formerly Hitachi Cable America, Inc) designs and manufactures
+                        high-performance copper and fiber optic communication cables made in the USA.</p>
+                </div>
+
+                <div class="partner-card">
                     <div class="partner-logo">
-                        <svg viewBox="0 0 100 50" class="mock-logo">
-                            <circle cx="25" cy="25" r="15" fill="#28a745" />
-                            <rect x="50" y="10" width="30" height="30" fill="#28a745" />
-                        </svg>
+                        <a href="https://www.siemon.com/" target="_blank">
+                            <img src="siemon.png" alt="Siemon">
+                        </a>
                     </div>
+                    <p>Siemon is a global best-in-class provider of high performance copper and fiber infrastructure
+                        solutions for data centers, smart buildings and cellular networks.</p>
+                </div>
+
+                <div class="partner-card">
                     <div class="partner-logo">
-                        <svg viewBox="0 0 100 50" class="mock-logo">
-                            <polygon points="50,10 80,40 20,40" fill="#dc3545" />
-                        </svg>
+                        <a href="https://werackyourworld.com/" target="_blank">
+                            <img src="greatlakes.png" alt="Great Lakes"  class="inverted-logo">
+                        </a>
                     </div>
+                    <p>Great Lakes Data Racks & Cabinets specializes in the manufacturing and integration of
+                        indoor/outdoor enclosures for the storage and protection of IT equipment</p>
+                </div>
+
+                <div class="partner-card">
                     <div class="partner-logo">
-                        <svg viewBox="0 0 100 50" class="mock-logo">
-                            <circle cx="50" cy="25" r="20" fill="#ffc107" />
-                        </svg>
+                        <a href="https://itnetworks.softing.com/us/" target="_blank">
+                            <img src="softing.svg" alt="Softing IT Networks">
+                        </a>
                     </div>
-                    <div class="partner-logo">
-                        <svg viewBox="0 0 100 50" class="mock-logo">
-                            <rect x="30" y="10" width="40" height="30" fill="#17a2b8" />
-                        </svg>
-                    </div>
-                    <!-- Duplicate set for seamless loop -->
-                    <div class="partner-logo">
-                        <svg viewBox="0 0 100 50" class="mock-logo">
-                            <rect x="10" y="10" width="30" height="30" fill="#007bff" />
-                            <circle cx="60" cy="25" r="15" fill="#007bff" />
-                        </svg>
-                    </div>
-                    <div class="partner-logo">
-                        <svg viewBox="0 0 100 50" class="mock-logo">
-                            <circle cx="25" cy="25" r="15" fill="#28a745" />
-                            <rect x="50" y="10" width="30" height="30" fill="#28a745" />
-                        </svg>
-                    </div>
-                    <div class="partner-logo">
-                        <svg viewBox="0 0 100 50" class="mock-logo">
-                            <polygon points="50,10 80,40 20,40" fill="#dc3545" />
-                        </svg>
-                    </div>
-                    <div class="partner-logo">
-                        <svg viewBox="0 0 100 50" class="mock-logo">
-                            <circle cx="50" cy="25" r="20" fill="#ffc107" />
-                        </svg>
-                    </div>
-                    <div class="partner-logo">
-                        <svg viewBox="0 0 100 50" class="mock-logo">
-                            <rect x="30" y="10" width="40" height="30" fill="#17a2b8" />
-                        </svg>
-                    </div>
+                    <p>Professional IT measurement technology to optimise the performance of your data communication
+                        through fast and secure connections for the entire life cycle of your network.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer Section -->
-    <footer class="footer">
-        <div class="footer-grid">
-            <div class="footer-section">
-                <h3>Contact Us</h3>
-                <address>
-                    <p><i class="location-icon">📍</i> 123 Business Street</p>
-                    <p style="padding-left: 1.5rem;">Suite 100</p>
-                    <p style="padding-left: 1.5rem;">City, State 12345</p>
-                </address>
-            </div>
-
-            <div class="footer-section">
-                <h3>Get in Touch</h3>
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <i class="phone-icon">📞</i>
-                        <a href="tel:+1234567890">(123) 456-7890</a>
-                    </div>
-                    <div class="contact-item">
-                        <i class="email-icon">✉️</i>
-                        <a href="mailto:info@yourcompany.com">info@yourcompany.com</a>
-                    </div>
-                </div>
-                <div class="social-links">
-                    <a href="#" aria-label="Facebook">FB</a>
-                    <a href="#" aria-label="LinkedIn">IN</a>
-                    <a href="#" aria-label="Twitter">TW</a>
-                </div>
-            </div>
-
-            <div class="footer-section">
-                <h3>Business Hours</h3>
-                <p>Monday - Friday</p>
-                <p>8:00 AM - 5:00 PM</p>
-                <p>24/7 Emergency Service Available</p>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2024 Your Company Name. All rights reserved.</p>
-            <div class="footer-links">
-                <a href="#">Privacy Policy</a>
-                <a href="#">Terms of Service</a>
-            </div>
-        </div>
-    </footer>
-
     <script>
-        // Mobile Navigation Toggle
         document.addEventListener('DOMContentLoaded', function () {
             const hamburger = document.querySelector('.hamburger');
             const mobileNav = document.querySelector('.mobile-nav');
@@ -169,17 +320,14 @@
                 document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
             }
 
-            // Toggle menu when hamburger is clicked
             hamburger.addEventListener('click', toggleMenu);
 
-            // Close menu when a link is clicked
             mobileLinks.forEach(link => {
                 link.addEventListener('click', () => {
                     toggleMenu();
                 });
             });
 
-            // Close menu when clicking outside
             document.addEventListener('click', (e) => {
                 if (!hamburger.contains(e.target) &&
                     !mobileNav.contains(e.target) &&
