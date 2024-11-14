@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - CJG Technology Sales</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav-container">
+            <a href="./index.html" class="logo">
+                <svg width="40" height="40" viewBox="0 0 190 190" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M134.128 27.2276L173.257 95L134.128 162.772L55.8716 162.772L16.7432 95L55.8716 27.2276L134.128 27.2276Z" stroke="white" stroke-width="29"/>
+                    <path d="M143.113 90C144.9 93.094 144.9 96.906 143.113 100L123.387 134.167C121.6 137.261 118.299 139.167 114.726 139.167L75.2735 139.167C71.7008 139.167 68.3996 137.261 66.6133 134.167L46.8868 100C45.1004 96.906 45.1004 93.094 46.8868 90L66.6133 55.8327C68.3996 52.7387 71.7009 50.8327 75.2735 50.8327L114.727 50.8327C118.299 50.8327 121.6 52.7387 123.387 55.8327L143.113 90Z" fill="white"/>
+                </svg>
+                <span class="company-name">CJG Technology Sales</span>
+            </a>
+            <div class="nav-links">
+                <a href="./about.html">About Us</a>
+                <a href="./services.html">Services</a>
+                <a href="./partners.html">Partners</a>
+                <a href="./contact.html">Contact Us</a>
+            </div>
+            <button class="hamburger" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="mobile-nav">
+                <a href="./index.html">Home</a>
+                <a href="./about.html">About Us</a>
+                <a href="./services.html">Services</a>
+                <a href="./partners.html">Partners</a>
+                <a href="./contact.html">Contact Us</a>
+            </div>
+        </nav>
+    </header>
+
+    <section id="contact">
+        <div class="container contact-content">
+            <h1>Get in Touch</h1>
+            <p>Reach out to us for expert technology solutions</p>
+            
+            <div class="contact-grid">
+                <div class="contact-form-container">
+                    <form class="contact-form">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="cta-button">Send Message</button>
+                    </form>
+                </div>
+
+                <div class="contact-info-container">
+                    <div class="contact-card">
+                        <h3>Contact Information</h3>
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <i class="location-icon">📍</i>
+                                <div>
+                                    <p>123 Business Street</p>
+                                    <p>Suite 100</p>
+                                    <p>City, State 12345</p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <i class="phone-icon">📞</i>
+                                <a href="tel:+1234567890">(123) 456-7890</a>
+                            </div>
+                            <div class="contact-item">
+                                <i class="email-icon">✉️</i>
+                                <a href="mailto:info@cjgtech.com">info@cjgtech.com</a>
+                            </div>
+                        </div>
+                        <div class="business-hours">
+                            <h4>Business Hours</h4>
+                            <p>Monday - Friday: 8:00 AM - 5:00 PM</p>
+                            <p>24/7 Emergency Service Available</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const hamburger = document.querySelector('.hamburger');
+            const mobileNav = document.querySelector('.mobile-nav');
+            const mobileLinks = document.querySelectorAll('.mobile-nav a');
+
+            function toggleMenu() {
+                hamburger.classList.toggle('active');
+                mobileNav.classList.toggle('active');
+                document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+            }
+
+            hamburger.addEventListener('click', toggleMenu);
+
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    toggleMenu();
+                });
+            });
+
+            document.addEventListener('click', (e) => {
+                if (!hamburger.contains(e.target) &&
+                    !mobileNav.contains(e.target) &&
+                    mobileNav.classList.contains('active')) {
+                    toggleMenu();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
