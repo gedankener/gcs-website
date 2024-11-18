@@ -199,14 +199,23 @@ body {
 }
 
 .partner-logo {
-    background: rgb(211, 211, 211);
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.3);
     padding: 1rem;
     border-radius: 8px;
     display: flex;
     align-items: center;
     justify-content: center;
     height: 200px;
-}
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s, rotate 0.3s ease;
+ }
+ 
+ .partner-logo:hover {
+    transform: translateY(-5px) rotate(5deg);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+ }
 
 .partner-logo img {
     max-width: 100%;
