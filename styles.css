@@ -544,7 +544,9 @@ footer {
 #about {
   min-height: 100vh;
   background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.6)),
-    url("bac.webp");
+    url("work.jpeg");
+  background-size: cover;
+  background-position: center;
   display: flex;
   align-items: center;
   padding: 6rem 2rem 4rem;
@@ -553,22 +555,28 @@ footer {
 .about-content {
   text-align: center;
   width: 100%;
+  margin-top: 200px;
 }
 
 .about-content h1 {
   font-size: 3rem;
   margin-bottom: 1rem;
-  background: linear-gradient(
-    135deg,
-    #ff00ff 0%,
-    #9932cc 25%,
-    #4169e1 50%,
-    #40e0d0 75%,
-    #00ced1 100%
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  padding: 0.5rem;
+  color: #ffffff;
   background-clip: text;
+  position: relative;
+}
+
+.about-content h1::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: -1;
+  border-radius: 4px;
 }
 
 .about-subtitle {
@@ -776,7 +784,8 @@ body {
   min-height: 100vh;
   background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.6)),
     url("OpticFiber.jpg");
-  padding: 80px 20px;
+  padding: 300px 20px;
+
 }
 
 .services-container {
