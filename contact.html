@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact Us - CJG Technology Sales</title>
     <link rel="stylesheet" href="styles.css" />
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
   </head>
   <body>
     <header class="header">
@@ -59,7 +63,7 @@
 
         <div class="contact-grid">
           <div class="contact-form-container">
-            <form class="contact-form">
+            <form id="contactForm" class="contact-form">
               <div class="form-group">
                 <label for="name">Name</label>
                 <input type="text" id="name" name="name" required />
@@ -82,6 +86,7 @@
                 ></textarea>
               </div>
               <button type="submit" class="cta-button">Send Message</button>
+              <span class="tooltip" id="formTooltip"></span>
             </form>
           </div>
 
@@ -169,6 +174,77 @@
             toggleMenu();
           }
         });
+      });
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Initialize EmailJS
+        emailjs.init("S1UpKYFROriRW70DE"); // Replace with your EmailJS public key
+
+        document
+          .getElementById("contactForm")
+          .addEventListener("submit", function (event) {
+            event.preventDefault(); // Prevent default form submission
+
+            const formTooltip = document.getElementById("formTooltip");
+
+            // Clear any previous tooltip messages
+            resetTooltips();
+
+            // Collect form data
+            const formData = {
+              name: document.getElementById("name").value,
+              email: document.getElementById("email").value,
+              phone: document.getElementById("phone").value,
+              message: document.getElementById("message").value,
+            };
+
+            // Validate form fields (optional step)
+            if (
+              !formData.name ||
+              !formData.email ||
+              !formData.phone ||
+              !formData.message
+            ) {
+              showTooltip(formTooltip, "All fields are required!", "error");
+              return;
+            }
+
+            // Send email using EmailJS
+            emailjs
+              .send("service_wq65wel", "template_ul45uel", formData)
+              .then(() => {
+                showTooltip(
+                  formTooltip,
+                  "Message sent successfully!",
+                  "success"
+                );
+                document.getElementById("contactForm").reset();
+              })
+              .catch((error) => {
+                console.error("Error sending message:", error);
+                showTooltip(
+                  formTooltip,
+                  "Failed to send the message. Try again!",
+                  "error"
+                );
+              });
+          });
+
+        // Utility to reset all tooltips
+        function resetTooltips() {
+          const tooltips = document.querySelectorAll(".tooltip");
+          tooltips.forEach((tooltip) => {
+            tooltip.textContent = "";
+            tooltip.className = "tooltip";
+          });
+        }
+
+        // Utility to show tooltips
+        function showTooltip(element, message, type) {
+          element.textContent = message;
+          element.classList.add(type); // Add either 'success' or 'error' class
+        }
       });
     </script>
   </body>

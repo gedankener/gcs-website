@@ -568,7 +568,7 @@ footer {
 }
 
 .about-content h1::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -785,7 +785,6 @@ body {
   background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.6)),
     url("OpticFiber.jpg");
   padding: 300px 20px;
-
 }
 
 .services-container {
@@ -1242,4 +1241,27 @@ body {
 
 footer {
   margin-top: 0;
+}
+
+.tooltip {
+  display: inline-block;
+  margin-top: 5px;
+  font-size: 0.85rem;
+  color: transparent;
+  transition: color 0.3s, visibility 0.3s;
+  visibility: hidden;
+}
+
+.tooltip.success {
+  color: green;
+  visibility: visible;
+}
+
+.tooltip.error {
+  color: red;
+  visibility: visible;
+}
+
+form div {
+  margin-bottom: 15px;
 }
