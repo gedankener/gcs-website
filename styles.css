@@ -364,9 +364,9 @@ footer {
   min-height: 100vh;
   background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)),
     url("support.jpg");
-  display: flex;
+  /* display: flex; */
   align-items: center;
-  padding: 6rem 2rem 4rem;
+  padding: 16rem 2rem 4rem;
 }
 
 .contact-content {
@@ -399,8 +399,7 @@ footer {
 .contact-grid {
   display: grid;
   grid-template-columns: 3fr 2fr;
-  gap: 3rem;
-  margin-top: 2rem;
+  gap: 2rem;
   text-align: left;
 }
 
@@ -1263,4 +1262,49 @@ footer {
 
 form div {
   margin-bottom: 15px;
+}
+
+.column-left {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  float: left;
+  width: 20%;
+}
+
+.column-middle {
+  float: left;
+  width: 60%;
+}
+
+.column-right {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  float: left;
+  width: 20%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@media (max-width: 786px) {
+  .column-left,
+  .column-right,
+  .column-middle {
+    width: 100%;
+  }
+
+  .container {
+    padding: 0;
+  }
+
+  .column-middle {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
 }
